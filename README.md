@@ -1,15 +1,17 @@
-# Contribution [#]: [Issue Title]
+# Contribution #275: Add highlight on graph view
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** 1  
+**Student:** Jesus Santiago  
+**Issue:** https://github.com/apache/burr/issues/275
+**Status:** Phase I Complete
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose this issue because it focuses on improving the user experience of Apache Burr’s telemetry interface in a clear and practical way. The current behavior already connects the telemetry list to the graph by highlighting graph elements when a user hovers over an action, but the reverse interaction is missing. Adding this feature would make the interface feel more complete and intuitive because users could move naturally between the graph view and the telemetry details without manually searching for the matching entry.
+
+This issue also interests me because it matches my goal of improving my front-end and open-source development skills. It seems like a manageable enhancement that would require understanding how Burr connects UI state, hover events, and graph components. By working on it, I hope to learn more about how interactive visualizations are built, how React components communicate with each other, and how small interface improvements can make debugging and tracing application behavior easier for users.
 
 ---
 
