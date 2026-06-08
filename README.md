@@ -19,19 +19,25 @@ This issue also interests me because it matches my goal of improving my front-en
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+List → graph highlighting already works. This issue is the other way around: hover a graph node and the matching rows in the telemetry list should light up.
+
+The catch is that the graph is keyed on action names while the list highlights by sequence ID. One action can show up many times, so you can't just reuse the existing single `currentHoverIndex` state.
 
 ### Expected Behavior
 
-[What should happen?]
+Hover a graph node → all list rows with that action name get highlighted. Move off the node → highlights clear. The node should also highlight itself on hover.
 
 ### Current Behavior
 
-[What actually happens?]
+Graph hover does nothing to the list. Only list hover works, via `currentHoverIndex` in the `HighlightState` context in `AppView.tsx`.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+All under `telemetry/ui/src/components/routes/app/`:
+
+- **`AppView.tsx`** — `HighlightState` context; add `currentHoverAction?: string` next to `currentHoverIndex`
+- **`GraphView.tsx`** — `ActionNode`; wire up mouse enter/leave to set `currentHoverAction` from `data.action.name`, and update opacity so the node highlights itself
+- **`StepList.tsx`** / **`InsightsView.tsx`** — `shouldBeHighlighted` should match on sequence ID or action name
 
 ---
 
